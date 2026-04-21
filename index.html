@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amritam - Premium Indian Sweets</title>
+    <meta name="description" content="Experience the taste of purity, tradition, and divine sweetness crafted with love. Premium Indian sweets by Amritam.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">AMRITAM</a>
+            <nav class="nav-links">
+                <a href="#about">Our Story</a>
+                <a href="#menu" class="active">Menu</a>
+                <a href="#bulk">Celebrations</a>
+                <a href="#quality">Purity</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="icon-btn search-btn" aria-label="Search"><i data-feather="search"></i></button>
+                <button class="icon-btn cart-btn" aria-label="Cart" onclick="toggleCart()">
+                    <i data-feather="shopping-bag"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="btn btn-primary nav-order-btn">Order Now</button>
+                <button class="icon-btn mobile-menu-btn" aria-label="Menu" onclick="toggleMobileMenu()"><i data-feather="menu"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero hero-split" id="hero">
+            <div class="hero-bg-pattern"></div>
+            <div class="container hero-content-split relative-z">
+                <div class="hero-text-col">
+                    <div class="floating-badge"><i data-feather="star" class="badge-icon"></i> Est. Since 1995 | Handcrafted Daily</div>
+                    <h1 class="hero-title">Jahan Mithaas<br>Banti Hai <span>Amrit</span></h1>
+                    <p class="hero-subtitle">Experience the taste of purity, tradition, and divine sweetness crafted with love.</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary btn-large">Order Now</a>
+                        <a href="#menu" class="btn btn-outline btn-large">Explore Menu</a>
+                        <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp btn-large">
+                            <i data-feather="message-circle"></i> WhatsApp
+                        </a>
+                    </div>
+                    
+                    <div class="trust-indicators animate-fade">
+                        <div class="trust-divider"></div>
+                        <div class="trust-badges-row">
+                            <div class="trust-item">
+                                <i data-feather="check-circle"></i>
+                                <span>100% Fresh Ingredients</span>
+                            </div>
+                            <div class="trust-item">
+                                <i data-feather="shield"></i>
+                                <span>Hygienic Preparation</span>
+                            </div>
+                            <div class="trust-item">
+                                <i data-feather="award"></i>
+                                <span>Authentic Taste</span>
+                            </div>
+                            <div class="trust-item">
+                                <i data-feather="truck"></i>
+                                <span>Same Day Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image-col">
+                    <canvas id="hero-canvas" class="hero-canvas-split"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Brand Section -->
+        <section id="about" class="about section-padding">
+            <canvas id="about-canvas"></canvas>
+            <div class="about-overlay"></div>
+            <div class="container split-layout relative-z">
+                <div class="about-image-wrapper">
+                    <!-- Placeholder using a rich sweet image -->
+                    <img src="untouched.jpeg" alt="Preparation of traditional Indian sweets" class="about-image">
+                    <div class="experience-badge">
+                        <span class="years">100%</span>
+                        <span class="text">Pure &<br>Authentic</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h4 class="section-subtitle">Our Heritage</h4>
+                    <h2 class="section-title">A Legacy of Pure Sweetness</h2>
+                    <p class="lead-text">Amritam was born from a passion to bring back the true essence of Indian मिठाई.</p>
+                    <p>Every sweet we create carries the richness of tradition, purity of ingredients, and the joy of celebration. From festive occasions to everyday happiness, Amritam is crafted to make every moment special.</p>
+                    <ul class="feature-list">
+                        <li><i data-feather="check"></i> Inspired by generations of tradition</li>
+                        <li><i data-feather="check"></i> Uncompromising focus on purity and quality</li>
+                        <li><i data-feather="check"></i> Crafted for family, celebration, and happiness</li>
+                    </ul>
+                    <div class="btn-group mt-32">
+                        <a href="#quality" class="btn btn-primary">Know More</a>
+                        <a href="#contact" class="btn btn-text">Visit Store <i data-feather="arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Bestsellers Secton -->
+        <section class="bestsellers section-padding bg-cream">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h4 class="section-subtitle">Customer Favorites</h4>
+                    <h2 class="section-title">Our Bestsellers</h2>
+                </div>
+                <div class="bestsellers-scroll">
+                    <!-- Cards will scroll horizontally -->
+                    <div class="bestseller-card">
+                        <img src="rasgulla.jpeg" alt="Kesar Rasgulla" class="bs-img">
+                        <div class="bs-content">
+                            <h3>Premium Kesar Rasgulla</h3>
+                            <p class="price">₹400 / kg</p>
+                            <button class="btn btn-primary w-full" onclick="addToCart(1)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="bestseller-card">
+                        <img src="kaju%20katli.jpeg" alt="Kaju Katli" class="bs-img">
+                        <div class="bs-content">
+                            <h3>Kaju Katli Special</h3>
+                            <p class="price">₹900 / kg</p>
+                            <button class="btn btn-primary w-full" onclick="addToCart(3)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="bestseller-card">
+                        <img src="desi%20ghee%20laddu.jpeg" alt="Besan Laddu" class="bs-img">
+                        <div class="bs-content">
+                            <h3>Desi Ghee Besan Laddu</h3>
+                            <p class="price">₹550 / kg</p>
+                            <button class="btn btn-primary w-full" onclick="addToCart(5)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="bestseller-card">
+                        <img src="pista%20barfi.jpeg" alt="Pista Barfi" class="bs-img">
+                        <div class="bs-content">
+                            <h3>Pista Barfi</h3>
+                            <p class="price">₹1100 / kg</p>
+                            <button class="btn btn-primary w-full" onclick="addToCart(4)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products / Menu Section -->
+        <section id="menu" class="menu section-padding">
+            <div class="container relative-z">
+                <div class="section-header text-center">
+                    <h4 class="section-subtitle">Our Offerings</h4>
+                    <h2 class="section-title">Explore The Amritam Menu</h2>
+                    <p class="section-desc">Handcrafted with pure ghee and premium ingredients</p>
+                </div>
+
+                <div class="menu-tabs">
+                    <button class="tab-btn active" data-category="all">All</button>
+                    <button class="tab-btn" data-category="bengali">Bengali Sweets</button>
+                    <button class="tab-btn" data-category="dry">Dry Sweets</button>
+                    <button class="tab-btn" data-category="traditional">Traditional</button>
+                    <button class="tab-btn" data-category="namkeen">Namkeen</button>
+                </div>
+
+                <div class="product-grid" id="productGrid">
+                    <!-- Products injected via JS -->
+                </div>
+                
+                <div class="text-center mt-48">
+                    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp">
+                        <i data-feather="message-circle"></i> Quick Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Amritam -->
+        <section id="quality" class="why-choose section-padding bg-cream alt-bg">
+            <div class="container text-center max-w-800">
+                <h4 class="section-subtitle">Our Promise</h4>
+                <h2 class="section-title">Why Choose Amritam</h2>
+                <div class="why-cards mt-48">
+                    <div class="why-card">
+                        <div class="why-icon"><i data-feather="droplet"></i></div>
+                        <h3>Pure Ghee</h3>
+                        <p>Made exclusively with 100% pure deshi ghee for an authentic rich taste.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><i data-feather="shield-off"></i></div>
+                        <h3>No Preservatives</h3>
+                        <p>Completely free from artificial colors and chemical preservatives.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><i data-feather="sun"></i></div>
+                        <h3>Handmade Daily</h3>
+                        <p>Fresh batches prepared every single morning with pristine hygiene.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Festival Special Section -->
+        <section class="festival bg-maroon-dark section-padding text-light text-center full-width-banner">
+            <div class="container">
+                <div class="festival-banner-content">
+                    <h2 class="section-title text-gold mb-16">Festive Season Gifting 🎁</h2>
+                    <h3 class="text-light mb-32" style="font-weight: 300;">Order for Diwali / Raksha Bandhan</h3>
+                    <div class="btn-group justify-center">
+                        <button class="btn btn-gold btn-large">Shop Gift Boxes</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Carousel -->
+        <section class="reviews section-padding bg-cream">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h4 class="section-subtitle">Client Love</h4>
+                    <h2 class="section-title">What Our Customers Say</h2>
+                </div>
+                
+                <div class="testimonial-carousel">
+                    <div class="testimonial-track">
+                        <!-- Review 1 -->
+                        <div class="review-card">
+                            <div class="stars">
+                                <i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i>
+                            </div>
+                            <p class="review-text">"The pure ghee taste is undeniable! By far the most authentic kaju katli I've had in years."</p>
+                            <p class="reviewer">- Anjali S.</p>
+                        </div>
+                        <!-- Review 2 -->
+                        <div class="review-card">
+                            <div class="stars">
+                                <i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i>
+                            </div>
+                            <p class="review-text">"Ordered 100 boxes for my daughter's wedding. Delivery was perfectly on time and packaging was premium."</p>
+                            <p class="reviewer">- Rajesh M.</p>
+                        </div>
+                        <!-- Review 3 -->
+                        <div class="review-card">
+                            <div class="stars">
+                                <i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i><i data-feather="star" class="star-filled"></i><i data-feather="star"></i>
+                            </div>
+                            <p class="review-text">"The rasgullas are incredibly fresh and soft. It really feels like an aristocratic brand."</p>
+                            <p class="reviewer">- Sneha K.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="gallery section-padding bg-cream-alt text-center">
+            <div class="container">
+                <h4 class="section-subtitle">Visual Delight</h4>
+                <h2 class="section-title mb-48">Moments with Amritam</h2>
+                
+                <div class="gallery-grid">
+                    <img src="pista%20barfi.jpeg" alt="Pista Barfi close-up" class="gallery-img">
+                    <img src="kaju%20katli.jpeg" alt="Kaju Katli display" class="gallery-img">
+                    <img src="desi%20ghee%20laddu.jpeg" alt="Desi Ghee Besan Laddu" class="gallery-img">
+                    <img src="malai%20cham%20cham.jpeg" alt="Malai Cham Cham" class="gallery-img">
+                </div>
+                
+                <div class="mt-48 text-center" style="display:flex; justify-content:center; align-items:center;">
+                    <button class="btn btn-outline">View Full Gallery</button>
+                    <a href="#" class="btn btn-text ml-16 flex align-center"><i data-feather="instagram" class="mr-8"></i> Follow on Instagram</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-padding border-t-cream">
+            <div class="container split-layout">
+                <div class="contact-info">
+                    <h4 class="section-subtitle">Reach Out</h4>
+                    <h2 class="section-title">We'd Love to Hear From You</h2>
+                    <p class="mb-32 text-gray">Have a question about a bulk order or our delivery radius? Contact our sweet team today.</p>
+                    
+                    <div class="contact-card flex">
+                        <i data-feather="map-pin" class="text-maroon mr-16 mt-4"></i>
+                        <div>
+                            <h4 class="m-0 mb-8 font-serif">Visit Us</h4>
+                            <p class="m-0 text-sm text-gray">123 Tradition Lane, Heritage Circle<br>New Delhi, 110001</p>
+                            <a href="#" class="text-link mt-8 block mt-8 font-medium">Get Directions</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card flex mt-24">
+                        <i data-feather="phone" class="text-maroon mr-16 mt-4"></i>
+                        <div>
+                            <h4 class="m-0 mb-8 font-serif">Call Us</h4>
+                            <p class="m-0 text-sm text-gray">+91 98765 43210</p>
+                            <div class="mt-8 flex gap-8">
+                                <a href="tel:+919876543210" class="btn btn-sm btn-outline">Call Now</a>
+                                <a href="https://wa.me/919876543210" target="_blank" class="btn btn-sm btn-whatsapp flex align-center"><i data-feather="message-circle" class="mr-4" style="width: 14px; height: 14px;"></i> Chat</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card flex mt-24">
+                        <i data-feather="mail" class="text-maroon mr-16 mt-4"></i>
+                        <div>
+                            <h4 class="m-0 mb-8 font-serif">Email Us</h4>
+                            <p class="m-0 text-sm text-gray">hello@amritam.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper bg-cream p-40 rounded-16 shadow-lg">
+                    <h3 class="mb-24 font-serif text-24 text-maroon">Send a Message</h3>
+                    <form class="contact-form" onsubmit="event.preventDefault();">
+                        <div class="form-group mb-16">
+                            <label for="name" class="block mb-8 font-medium text-sm">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Doe">
+                        </div>
+                        <div class="form-group mb-16">
+                            <label for="email" class="block mb-8 font-medium text-sm">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@example.com">
+                        </div>
+                        <div class="form-group mb-16">
+                            <label for="subject" class="block mb-8 font-medium text-sm">Subject</label>
+                            <select id="subject" class="form-control">
+                                <option>General Inquiry</option>
+                                <option>Bulk Order</option>
+                                <option>Feedback</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-24">
+                            <label for="message" class="block mb-8 font-medium text-sm">Message</label>
+                            <textarea id="message" rows="4" class="form-control" placeholder="How can we help?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-maroon-dark text-light border-t-gold pt-64 pb-32">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2 class="footer-logo text-gold font-serif m-0 mb-8">AMRITAM</h2>
+                    <p class="tagline mt-16 italic text-cream-muted text-sm">"Jahan Mithaas Banti Hai Amrit"</p>
+                    <p class="mt-8 text-cream-muted text-sm">Experience the taste of purity, tradition, and divine sweetness crafted with love.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 class="text-gold mb-16 font-serif">Quick Links</h4>
+                    <ul class="list-none p-0 m-0">
+                        <li class="mb-8"><a href="#" class="text-cream-muted hover-gold transition">Home</a></li>
+                        <li class="mb-8"><a href="#menu" class="text-cream-muted hover-gold transition">Menu</a></li>
+                        <li class="mb-8"><a href="#about" class="text-cream-muted hover-gold transition">Story</a></li>
+                        <li class="mb-8"><a href="#bulk" class="text-cream-muted hover-gold transition">Bulk Orders</a></li>
+                        <li class="mb-8"><a href="#contact" class="text-cream-muted hover-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="text-gold mb-16 font-serif">Legal</h4>
+                    <ul class="list-none p-0 m-0">
+                        <li class="mb-8"><a href="#" class="text-cream-muted hover-gold transition">Terms & Conditions</a></li>
+                        <li class="mb-8"><a href="#" class="text-cream-muted hover-gold transition">Privacy Policy</a></li>
+                        <li class="mb-8"><a href="#" class="text-cream-muted hover-gold transition">Refund Policy</a></li>
+                        <li class="mb-8"><a href="#" class="text-cream-muted hover-gold transition">Shipping Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4 class="text-gold mb-16 font-serif">Connect</h4>
+                    <div class="social-icons flex gap-12 mt-16">
+                        <a href="#" class="social-icon w-32 h-32 rounded-full border border-gray flex justify-center align-center text-cream-muted hover-gold transition"><i data-feather="instagram" style="width: 16px;"></i></a>
+                        <a href="#" class="social-icon w-32 h-32 rounded-full border border-gray flex justify-center align-center text-cream-muted hover-gold transition"><i data-feather="facebook" style="width: 16px;"></i></a>
+                        <a href="#" class="social-icon w-32 h-32 rounded-full border border-gray flex justify-center align-center text-cream-muted hover-gold transition"><i data-feather="twitter" style="width: 16px;"></i></a>
+                    </div>
+                    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp mt-24 flex align-center" style="display:inline-flex;">
+                        <i data-feather="message-circle" class="mr-8"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom mt-48 pt-24 border-t border-maroon flex justify-between text-sm text-cream-muted flex-wrap gap-16">
+                <p class="m-0">&copy; 2026 Amritam Sweets. All rights reserved.</p>
+                <p class="m-0 flex align-center">Designed with <i data-feather="heart" class="mx-4 text-gold" style="width: 14px; height: 14px; display: inline-block;"></i> for tradition</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Overlay Modal -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-sidebar">
+            <div class="cart-header flex justify-between align-center p-24 border-b border-cream">
+                <h3 class="m-0 font-serif text-24">Your Cart</h3>
+                <button class="icon-btn border-0 bg-transparent cursor-pointer" onclick="toggleCart()"><i data-feather="x"></i></button>
+            </div>
+            <div class="cart-items p-24" id="cartItems">
+                <!-- Cart Items generated by JS -->
+                <div class="empty-cart-msg text-center text-gray py-48 hidden" id="emptyCart">Your cart is sweet, but empty!</div>
+            </div>
+            <div class="cart-footer p-24 border-t border-cream absolute bottom-0 left-0 w-full bg-light box-border">
+                <div class="cart-total flex justify-between mb-16">
+                    <span class="font-bold">Total:</span>
+                    <span class="font-bold text-maroon text-20" id="cartTotalDisplay">₹0</span>
+                </div>
+                <button class="btn btn-primary w-full btn-large" onclick="openCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-overlay" id="checkoutModal">
+        <div class="checkout-modal-content">
+            <button class="close-checkout" aria-label="Close" onclick="closeCheckout()"><i data-feather="x"></i></button>
+            
+            <div class="checkout-header">
+                <i data-feather="droplet" class="brand-droplet"></i>
+                <h3 class="checkout-title mt-8">Complete Your Order</h3>
+                <div class="accent-divider"></div>
+            </div>
+            
+            <form id="checkoutForm" onsubmit="processCheckout(event)">
+                <div class="checkout-steps">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <div class="input-wrapper">
+                            <i data-feather="user" class="input-icon"></i>
+                            <input type="text" required class="form-input" placeholder="Jane Doe">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <div class="input-wrapper">
+                            <i data-feather="phone" class="input-icon"></i>
+                            <input type="tel" required class="form-input" placeholder="+91 98765 43210">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Delivery Address</label>
+                        <div class="input-wrapper">
+                            <i data-feather="map-pin" class="input-icon textarea-icon"></i>
+                            <textarea required class="form-input" rows="3" placeholder="Flat No, Building, Street, City"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-section mt-32">
+                        <label class="payment-label-title">Select Payment Method</label>
+                        <div class="payment-options flex gap-16 mt-16">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="upi" checked>
+                                <div class="payment-card">
+                                    <div class="custom-radio"></div>
+                                    <div class="payment-info flex flex-col align-center">
+                                        <i data-feather="smartphone" class="mb-8 text-gold"></i>
+                                        <span>UPI / Online</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cod">
+                                <div class="payment-card">
+                                    <div class="custom-radio"></div>
+                                    <div class="payment-info flex flex-col align-center">
+                                        <i data-feather="truck" class="mb-8 text-gold"></i>
+                                        <span>Cash on Delivery</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout-footer mt-40">
+                    <p class="checkout-total mb-16 text-center text-gray font-medium">Total Amount: <strong class="text-maroon text-24 font-bold" id="checkoutTotalDisplay">₹0</strong></p>
+                    <button type="submit" class="btn btn-primary w-full btn-large shadow-lg flex justify-center">Place Order</button>
+                    <button type="button" class="btn btn-text w-full mt-8" onclick="closeCheckout()">Cancel</button>
+                </div>
+            </form>
+            
+            <div id="orderConfirmation" class="hidden text-center py-48">
+                <i data-feather="check-circle" class="text-gold mx-auto mb-24" style="width:72px; height:72px; color: var(--color-gold);"></i>
+                <h3 class="font-serif text-32 mb-16 text-maroon">Order Confirmed!</h3>
+                <p class="text-gray mb-8">Your tracking ID is <strong class="text-dark">#AM-89302</strong></p>
+                <p class="text-gray mb-32">You will receive an SMS with delivery details shortly.</p>
+                <div class="accent-divider mb-32 mx-auto"></div>
+                <button class="btn btn-primary btn-large" onclick="closeCheckout(true)">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/1234567890" target="_blank" class="floating-whatsapp" aria-label="Chat with us on WhatsApp">
+        <i data-feather="message-circle"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
